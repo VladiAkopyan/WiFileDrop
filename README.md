@@ -1,2 +1,10 @@
 # WiFileDrop
-A program for sending and receiving files from different devices connected to the same WiFi network
+
+WiFileDrop - программа для отправки файлов с одного компьютера на другой по WiFi.
+
+---
+Создатель: **Vladi Akopyan**
+
+[Телеграмм канал разработчика](https://t.me/ProtocolGhostStudio)
+
+Версия: **Официально не вышло**
