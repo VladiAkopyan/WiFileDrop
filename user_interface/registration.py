@@ -1,10 +1,14 @@
 from customtkinter import *
-import json
+from scripts.work_with_json import *
+from .messages import *
 
 
 FONT_FAMILY = 'San Francisco'
 FONT_SIZE_TITLE = 32
 FONT_SIZE = 14
+
+TITLE = (FONT_FAMILY, FONT_SIZE_TITLE, 'bold')
+TEXT = (FONT_FAMILY, FONT_SIZE, 'bold')
 
 
 class RegistrationApp(CTk):
@@ -18,14 +22,26 @@ class RegistrationApp(CTk):
 
 
         self.title_registration_welcome = CTkLabel(self, text='Регистрация',
-                                                   font=(FONT_FAMILY, FONT_SIZE_TITLE, 'bold'))
-        self.title_registration_welcome.pack(side='top', pady=20)
+                                                   font=TITLE)
+        self.title_registration_welcome.pack(side='top', pady=70)
 
 
         self.input_user_name = CTkEntry(self, placeholder_text='Введите ваше имя',
-                                        font=(FONT_FAMILY, FONT_SIZE, 'bold'),
+                                        font=TEXT,
                                         width=300)
         self.input_user_name.pack(side='top', pady=30)
 
 
-        self.button_continue = CTkButton(self, text='Продолжить')
+        self.button_continue = CTkButton(self, text='Продолжить',
+                                         font=TEXT,
+                                         command=self.upload_user_name)
+        self.button_continue.pack(side='top', pady=30)
+
+
+    def upload_user_name(self):
+        try:
+            new_user_name = self.input_user_name.get()
+            update_value('USER-NAME', new_user_name)
+            message_success('Успешная регистрация', 'Ваши данные успешно записаны!')
+        except FileNotFoundError:
+            message_error('Произошла ошибка', 'Файл для записи данных поврежден, либо отсутствует')
