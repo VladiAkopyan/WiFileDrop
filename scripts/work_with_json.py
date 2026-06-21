@@ -1,10 +1,16 @@
 import json
 
-def user_name_find():
+def find_value(key):
     with open('./datas/user.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-    return data['USER-NAME']
+        return data.get(key, None)
 
-def user_name_send(data):
-    with open('./datas/user.json', 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def update_value(key, new_value):
+    with open('./datas/user.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+
+    data[key] = new_value
+
+    with open('./datas/user.json', 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=2)
