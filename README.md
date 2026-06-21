@@ -5,6 +5,6 @@ WiFileDrop - программа для отправки файлов с одно
 ---
 Создатель: **Vladi Akopyan**
 
-[Телеграмм канал разработчика](https://t.me/ProtocolGhostStudio)
+[Телеграмм канал разработчика](https://t.me/vladiakopyangithub)
 
 Версия: **Официально не вышло**
