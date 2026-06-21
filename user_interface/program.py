@@ -1,4 +1,5 @@
-import customtkinter as ctk
+from customtkinter import *
+import json
 
 
 FONT_FAMILY = 'San Francisco'
@@ -10,7 +11,7 @@ FONT_COLOR_SUCCESS = '#2ECC71'
 SYSTEM_THEME = 'Dark'
 
 
-class MyApp(ctk.CTk):
+class MyApp(CTk):
     def __init__(self):
         super().__init__()
 
@@ -18,8 +19,7 @@ class MyApp(ctk.CTk):
         self.title('WiFileDrop')
         self.resizable(False, False)
         self.attributes('-topmost', True)
-        ctk.set_appearance_mode(SYSTEM_THEME)
+        set_appearance_mode(SYSTEM_THEME)
 
-        self.title_text = ctk.CTkLabel(self, text="WiFileDrop", font=(FONT_FAMILY, FONT_SIZE_TITLE, 'bold'))
-        self.title_text.grid(column=0, row=0, padx=10, pady=10)
+
 
