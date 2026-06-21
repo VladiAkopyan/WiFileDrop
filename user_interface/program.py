@@ -1,15 +1,14 @@
 from customtkinter import *
+from scripts.work_with_json import *
 import json
-
-def user_name_find():
-    with open('./datas/user.json', 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    return data['USER-NAME']
 
 
 FONT_FAMILY = 'San Francisco'
 FONT_SIZE_TITLE = 32
 FONT_SIZE = 14
+
+TITLE = (FONT_FAMILY, FONT_SIZE_TITLE, 'bold')
+
 FONT_COLOR_ERROR = '#E74C3C'
 FONT_COLOR_WARNING = '#F39C12'
 FONT_COLOR_SUCCESS = '#2ECC71'
