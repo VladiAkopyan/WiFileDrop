@@ -1,6 +1,5 @@
 from customtkinter import *
 from scripts.work_with_json import *
-import json
 
 
 FONT_FAMILY = 'San Francisco'
