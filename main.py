@@ -1,3 +1,5 @@
-from customtkinter import *
+from user_interface import *
 
-print("Hello world")
+if __name__ == '__main__':
+    app = MyApp()
+    app.mainloop()
